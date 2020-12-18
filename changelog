@@ -8,4 +8,9 @@
 
 - Added currentversion command
 
-Entity v0.0.2 coming soon
+> Entity v0.0.2
+
+- Removed blur commands because that may ruin the plugin
+- Added Depth of Field disabler (disabledof)
+
+Entity v0.0.3 coming soon
