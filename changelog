@@ -15,5 +15,6 @@
 > Entity v0.1.0
 
 - Removed Depth of Field disabler (Unable to fix)
+* Fixed currentversion command
 
 > Entity v0.1.1 coming soon
