@@ -1,16 +1,19 @@
 > Entity v0.0.0
 
-- Released
-- Added blur command
-- Added unblur / noblur command
++ Released
++ Added blur command
++ Added unblur / noblur command
 
 > Entity v0.0.1
 
-- Added currentversion command
++ Added currentversion command
 
 > Entity v0.0.2
 
-- Removed blur commands because that may ruin the plugin
-- Added Depth of Field disabler (disabledof)
++ Added Depth of Field disabler (disabledof)
 
-Entity v0.0.3 coming soon
+> Entity v0.1.0
+
+- Removed Depth of Field disabler (Unable to fix)
+
+> Entity v0.1.1 coming soon
