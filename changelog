@@ -17,4 +17,6 @@
 - Removed Depth of Field disabler (Unable to fix)
 * Fixed currentversion command
 
-> Entity v0.1.1 coming soon
+> Entity v0.1.1
+
+* Fixed currentversion command that displayed for Infinite Yield version
