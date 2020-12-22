@@ -21,4 +21,9 @@
 
 * Fixed currentversion command that displayed for Infinite Yield version
 
-> Entity v0.1.2 coming soon
+> Entity v0.1.2
+
+* Fixed currentversion command doesn't notify the current version
+* Replaced blur commands to hd command
+
+> Entity v0.1.3 coming soon
