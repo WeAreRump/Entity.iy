@@ -30,4 +30,9 @@
 
 + Added placeversion command to display the Place Version
 
-> Entity v0.1.4 coming soon
+> Entity v0.1.4
+
+* Fixed nohd command that can't disable the blur but that the unhd command only worked
+* Fixed placeversion that was changed to gameversion (Maybe)
+
+> Entity v0.2.0 coming soon
