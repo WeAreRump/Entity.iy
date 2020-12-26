@@ -1,0 +1,63 @@
+HD = Instance.new("BlurEffect")
+HD.Parent = game.Lighting
+HD.Size = 4
+
+ver = "0.2.0"
+HDEnabled = false
+
+local Plugin = {
+	["PluginName"] = "Entity",
+	["PluginDescription"] = "Plugin by WeAreRump\nv"..ver,
+
+	["Commands"] = {
+		["hd"] = {
+			["ListName"] = "hd",
+			["Description"] = "Makes the game HD",
+			["Aliases"] = {"hd"},
+			["Function"] = function(args,speaker)
+				if not HDEnabled then
+					HDEnabled = true
+					HD.Enabled = true
+				else
+					notify("Entity Error","HD is already enabled")
+				end
+			end
+		},
+
+		["unhd"] = {
+			["ListName"] = "unhd / nohd",
+			["Description"] = "Makes the game un-HD",
+			["Aliases"] = {"unhd","nohd"},
+			["Function"] = function(args,speaker)
+				if HDEnabled then
+					HDEnabled = false
+					HD.Enabled = false
+				else
+					notify("Entity Error","HD is already disabled")
+				end
+			end
+		},
+
+		["currentversion"] = {
+			["ListName"] = "currentversion",
+			["Description"] = "Notifies Entity's current version",
+			["Aliases"] = {"currentversion"},
+			["Function"] = function(args,speaker)
+				if pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/WeAreRump/Entity.iy/main/version"))() end) then
+					notify("Entity Version","Current Version: "..Current.."\nYour Version: "..ver)
+				end
+			end
+		},
+		
+		["placeversion"] = {
+			["ListName"] = "placeversion",
+			["Description"] = "Notifies the place's version",
+			["Aliases"] = {"placeversion"},
+			["Function"] = function(args,speaker)
+				notify("Entity Place Version", game.PlaceVersion)
+			end
+		}
+	}
+}
+
+return Plugin
