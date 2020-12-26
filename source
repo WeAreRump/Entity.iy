@@ -1,8 +1,8 @@
 HD = Instance.new("BlurEffect")
 HD.Parent = game.Lighting
+HD.Enabled = false
 HD.Size = 4
 
-ver = "0.2.0"
 HDEnabled = false
 
 local Plugin = {
