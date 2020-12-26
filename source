@@ -37,17 +37,6 @@ local Plugin = {
 				end
 			end
 		},
-
-		["currentversion"] = {
-			["ListName"] = "currentversion",
-			["Description"] = "Notifies Entity's current version",
-			["Aliases"] = {"currentversion"},
-			["Function"] = function(args,speaker)
-				if pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/WeAreRump/Entity.iy/main/version"))() end) then
-					notify("Entity Version","Current Version: "..Current.."\nYour Version: "..ver)
-				end
-			end
-		},
 		
 		["placeversion"] = {
 			["ListName"] = "placeversion",
