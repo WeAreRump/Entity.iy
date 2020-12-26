@@ -7,7 +7,7 @@ HDEnabled = false
 
 local Plugin = {
 	["PluginName"] = "Entity",
-	["PluginDescription"] = "Plugin by WeAreRump\nv"..ver,
+	["PluginDescription"] = "Plugin by WeAreRump\nAuto-Update Enabled",
 
 	["Commands"] = {
 		["hd"] = {
