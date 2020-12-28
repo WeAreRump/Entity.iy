@@ -1,0 +1,209 @@
+UserInputService = game:GetService("UserInputService")
+
+ENTITY_CHANGELOG = Instance.new("ScreenGui")
+ChangelogHolder = Instance.new("Frame")
+ChangelogHolder_2 = Instance.new("Frame")
+Changelog1 = Instance.new("TextLabel")
+Changelog2 = Instance.new("TextLabel")
+Changelog3 = Instance.new("TextLabel")
+Changelog4 = Instance.new("TextLabel")
+Changelog5 = Instance.new("TextLabel")
+Changelog6 = Instance.new("TextLabel")
+Title = Instance.new("TextLabel")
+Publisher = Instance.new("TextLabel")
+Title_2 = Instance.new("TextLabel")
+Close = Instance.new("TextButton")
+
+function dragify(Frame)
+	dragToggle = nil
+	local dragSpeed = 0
+	dragInput = nil
+	dragStart = nil
+	local dragPos = nil
+	function updateInput(input)
+		local Delta = input.Position - dragStart
+		local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+		game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
+	end
+	Frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UserInputService:GetFocusedTextBox() == nil then
+			dragToggle = true
+			dragStart = input.Position
+			startPos = Frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	Frame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if input == dragInput and dragToggle then
+			updateInput(input)
+		end
+	end)
+end
+
+ENTITY_CHANGELOG.Name = "ENTITY_CHANGELOG"
+ENTITY_CHANGELOG.Parent = game.CoreGui
+ENTITY_CHANGELOG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ChangelogHolder.Name = "ChangelogHolder"
+ChangelogHolder.Parent = ENTITY_CHANGELOG
+ChangelogHolder.BackgroundColor3 = Color3.fromRGB(64, 64, 64)
+ChangelogHolder.BorderSizePixel = 0
+ChangelogHolder.Position = UDim2.new(0.40234375, 0, 0.354978353, 0)
+ChangelogHolder.Size = UDim2.new(0, 300, 0, 200)
+
+ChangelogHolder_2.Name = "ChangelogHolder"
+ChangelogHolder_2.Parent = ChangelogHolder
+ChangelogHolder_2.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+ChangelogHolder_2.BorderSizePixel = 0
+ChangelogHolder_2.Position = UDim2.new(0.0819531381, 0, 0.128167421, 0)
+ChangelogHolder_2.Size = UDim2.new(0, 250, 0, 135)
+
+Changelog1.Name = "Changelog1"
+Changelog1.Parent = ChangelogHolder_2
+Changelog1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Changelog1.BackgroundTransparency = 1.000
+Changelog1.Size = UDim2.new(0, 250, 0, 20)
+Changelog1.Font = Enum.Font.SourceSans
+Changelog1.Text = " + Added Changelog"
+Changelog1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Changelog1.TextScaled = true
+Changelog1.TextSize = 14.000
+Changelog1.TextWrapped = true
+Changelog1.TextXAlignment = Enum.TextXAlignment.Left
+
+Changelog2.Name = "Changelog2"
+Changelog2.Parent = ChangelogHolder_2
+Changelog2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Changelog2.BackgroundTransparency = 1.000
+Changelog2.Position = UDim2.new(0, 0, 0.148148149, 0)
+Changelog2.Size = UDim2.new(0, 250, 0, 20)
+Changelog2.Font = Enum.Font.SourceSans
+Changelog2.Text = ""
+Changelog2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Changelog2.TextScaled = true
+Changelog2.TextSize = 14.000
+Changelog2.TextWrapped = true
+Changelog2.TextXAlignment = Enum.TextXAlignment.Left
+
+Changelog3.Name = "Changelog3"
+Changelog3.Parent = ChangelogHolder_2
+Changelog3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Changelog3.BackgroundTransparency = 1.000
+Changelog3.Position = UDim2.new(0, 0, 0.296296299, 0)
+Changelog3.Size = UDim2.new(0, 250, 0, 20)
+Changelog3.Font = Enum.Font.SourceSans
+Changelog3.Text = ""
+Changelog3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Changelog3.TextScaled = true
+Changelog3.TextSize = 14.000
+Changelog3.TextWrapped = true
+Changelog3.TextXAlignment = Enum.TextXAlignment.Left
+
+Changelog4.Name = "Changelog4"
+Changelog4.Parent = ChangelogHolder_2
+Changelog4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Changelog4.BackgroundTransparency = 1.000
+Changelog4.Position = UDim2.new(0, 0, 0.444444448, 0)
+Changelog4.Size = UDim2.new(0, 250, 0, 20)
+Changelog4.Font = Enum.Font.SourceSans
+Changelog4.Text = ""
+Changelog4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Changelog4.TextScaled = true
+Changelog4.TextSize = 14.000
+Changelog4.TextWrapped = true
+Changelog4.TextXAlignment = Enum.TextXAlignment.Left
+
+Changelog5.Name = "Changelog5"
+Changelog5.Parent = ChangelogHolder_2
+Changelog5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Changelog5.BackgroundTransparency = 1.000
+Changelog5.Position = UDim2.new(0, 0, 0.592592597, 0)
+Changelog5.Size = UDim2.new(0, 250, 0, 20)
+Changelog5.Font = Enum.Font.SourceSans
+Changelog5.Text = ""
+Changelog5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Changelog5.TextScaled = true
+Changelog5.TextSize = 14.000
+Changelog5.TextWrapped = true
+Changelog5.TextXAlignment = Enum.TextXAlignment.Left
+
+Changelog6.Name = "Changelog6"
+Changelog6.Parent = ChangelogHolder_2
+Changelog6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Changelog6.BackgroundTransparency = 1.000
+Changelog6.Position = UDim2.new(0, 0, 0.740740776, 0)
+Changelog6.Size = UDim2.new(0, 250, 0, 20)
+Changelog6.Font = Enum.Font.SourceSans
+Changelog6.Text = ""
+Changelog6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Changelog6.TextScaled = true
+Changelog6.TextSize = 14.000
+Changelog6.TextWrapped = true
+Changelog6.TextXAlignment = Enum.TextXAlignment.Left
+
+Title.Name = "Title"
+Title.Parent = ChangelogHolder
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0, 0, 0.870000005, 0)
+Title.Size = UDim2.new(0, 300, 0, 26)
+Title.Font = Enum.Font.SourceSans
+Title.Text = " Entity.iy"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+Publisher.Name = "Publisher"
+Publisher.Parent = ChangelogHolder
+Publisher.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Publisher.BackgroundTransparency = 1.000
+Publisher.Position = UDim2.new(0, 0, 0.870000005, 0)
+Publisher.Size = UDim2.new(0, 300, 0, 26)
+Publisher.Font = Enum.Font.SourceSans
+Publisher.Text = "By WeAreRump "
+Publisher.TextColor3 = Color3.fromRGB(255, 255, 255)
+Publisher.TextScaled = true
+Publisher.TextSize = 14.000
+Publisher.TextWrapped = true
+Publisher.TextXAlignment = Enum.TextXAlignment.Right
+
+Title_2.Name = "Title"
+Title_2.Parent = ChangelogHolder
+Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.BackgroundTransparency = 1.000
+Title_2.Size = UDim2.new(0, 300, 0, 26)
+Title_2.Font = Enum.Font.SourceSansBold
+Title_2.Text = "Changelog"
+Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.TextScaled = true
+Title_2.TextSize = 14.000
+Title_2.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = ChangelogHolder
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.915286481, 0, 0, 0)
+Close.Size = UDim2.new(0, 25, 0, 26)
+Close.Font = Enum.Font.SourceSansBold
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+wait()
+
+Close.MouseButton1Click:Connect(function() ENTITY_CHANGELOG:Destroy() end)
+dragify(ChangelogHolder)
