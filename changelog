@@ -14,7 +14,6 @@ Publisher = Instance.new("TextLabel")
 TopTitle = Instance.new("TextLabel")
 Close = Instance.new("TextButton")
 
-local UIS = game:GetService("UserInputService")
 function dragify(Frame)
 	dragToggle = nil
 	local dragSpeed = 0
