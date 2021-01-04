@@ -3,7 +3,13 @@ HD.Parent = game.Lighting
 HD.Enabled = false
 HD.Size = 4
 
+NV = Instance.new("ColorCorrectionEffect")
+NV.Parent = game.Lighting
+NV.Enabled = false
+NV.TintColor = Color3.fromRGB(0, 255, 0)
+
 HDEnabled = false
+NVEnabled = false
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/WeAreRump/Entity.iy/main/changelog"))()
 
@@ -39,13 +45,41 @@ local Plugin = {
 				end
 			end
 		},
-		
+
 		["placeversion"] = {
 			["ListName"] = "placeversion",
 			["Description"] = "Notifies the place's version",
 			["Aliases"] = {"placeversion"},
 			["Function"] = function(args,speaker)
 				notify("Entity Place Version", game.PlaceVersion)
+			end
+		},
+		
+		["nightvision"] = {
+			["ListName"] = "nightvision / nv",
+			["Description"] = "Enables Night Vision",
+			["Aliases"] = {"nightvision","nv"},
+			["Function"] = function(args,speaker)
+				if not NVEnabled then
+					NVEnabled = true
+					NV.Enabled = true
+				else
+					notify("Entity Error","Night Vision is already enabled")
+				end
+			end
+		},
+		
+		["unnightvision"] = {
+			["ListName"] = "unnightvision / unnv",
+			["Description"] = "Disables Night Vision",
+			["Aliases"] = {"unnightvision","unnv"},
+			["Function"] = function(args,speaker)
+				if NVEnabled then
+					NVEnabled = false
+					NV.Enabled = false
+				else
+					notify("Entity Error","Night Vision is already disabled")
+				end
 			end
 		}
 	}
