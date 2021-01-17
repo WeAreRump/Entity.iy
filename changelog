@@ -53,7 +53,7 @@ function dragify(Frame)
 end
 
 ENTITY_CHANGELOG.Name = "ENTITY_CHANGELOG"
-ENTITY_CHANGELOG.Parent = game.CoreGui
+ENTITY_CHANGELOG.Parent = game:GetService("CoreGui")
 ENTITY_CHANGELOG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ChangelogHolder.Name = "ChangelogHolder"
@@ -62,7 +62,6 @@ ChangelogHolder.BackgroundColor3 = Color3.fromRGB(64, 64, 64)
 ChangelogHolder.BorderSizePixel = 0
 ChangelogHolder.Position = UDim2.new(0.40234375, 0, 0.354978353, 0)
 ChangelogHolder.Size = UDim2.new(0, 300, 0, 200)
-table.insert(shade1,ChangelogHolder)
 
 ChangelogHolder_2.Name = "ChangelogHolder"
 ChangelogHolder_2.Parent = ChangelogHolder
@@ -70,7 +69,6 @@ ChangelogHolder_2.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
 ChangelogHolder_2.BorderSizePixel = 0
 ChangelogHolder_2.Position = UDim2.new(0.0819531381, 0, 0.128167421, 0)
 ChangelogHolder_2.Size = UDim2.new(0, 250, 0, 135)
-table.insert(shade2,ChangelogHolder_2)
 
 Changelog1.Name = "Changelog1"
 Changelog1.Parent = ChangelogHolder_2
@@ -78,13 +76,12 @@ Changelog1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Changelog1.BackgroundTransparency = 1.000
 Changelog1.Size = UDim2.new(0, 250, 0, 20)
 Changelog1.Font = Enum.Font.SourceSans
-Changelog1.Text = " + Added Night Vision command"
+Changelog1.Text = " * Replaced hd command name to blur command name"
 Changelog1.TextColor3 = Color3.fromRGB(255, 255, 255)
 Changelog1.TextScaled = true
 Changelog1.TextSize = 14.000
 Changelog1.TextWrapped = true
 Changelog1.TextXAlignment = Enum.TextXAlignment.Left
-table.insert(text1,Changelog1)
 
 Changelog2.Name = "Changelog2"
 Changelog2.Parent = ChangelogHolder_2
@@ -93,13 +90,12 @@ Changelog2.BackgroundTransparency = 1.000
 Changelog2.Position = UDim2.new(0, 0, 0.148148149, 0)
 Changelog2.Size = UDim2.new(0, 250, 0, 20)
 Changelog2.Font = Enum.Font.SourceSans
-Changelog2.Text = ""
+Changelog2.Text = " * Replaced unhd command name to unblur command name"
 Changelog2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Changelog2.TextScaled = true
 Changelog2.TextSize = 14.000
 Changelog2.TextWrapped = true
 Changelog2.TextXAlignment = Enum.TextXAlignment.Left
-table.insert(text1,Changelog2)
 
 Changelog3.Name = "Changelog3"
 Changelog3.Parent = ChangelogHolder_2
@@ -114,7 +110,6 @@ Changelog3.TextScaled = true
 Changelog3.TextSize = 14.000
 Changelog3.TextWrapped = true
 Changelog3.TextXAlignment = Enum.TextXAlignment.Left
-table.insert(text1,Changelog3)
 
 Changelog4.Name = "Changelog4"
 Changelog4.Parent = ChangelogHolder_2
@@ -129,7 +124,6 @@ Changelog4.TextScaled = true
 Changelog4.TextSize = 14.000
 Changelog4.TextWrapped = true
 Changelog4.TextXAlignment = Enum.TextXAlignment.Left
-table.insert(text1,Changelog4)
 
 Changelog5.Name = "Changelog5"
 Changelog5.Parent = ChangelogHolder_2
@@ -144,7 +138,6 @@ Changelog5.TextScaled = true
 Changelog5.TextSize = 14.000
 Changelog5.TextWrapped = true
 Changelog5.TextXAlignment = Enum.TextXAlignment.Left
-table.insert(text1,Changelog5)
 
 Changelog6.Name = "Changelog6"
 Changelog6.Parent = ChangelogHolder_2
@@ -159,7 +152,6 @@ Changelog6.TextScaled = true
 Changelog6.TextSize = 14.000
 Changelog6.TextWrapped = true
 Changelog6.TextXAlignment = Enum.TextXAlignment.Left
-table.insert(text1,Changelog6)
 
 Title.Name = "Title"
 Title.Parent = ChangelogHolder
@@ -174,8 +166,6 @@ Title.TextScaled = true
 Title.TextSize = 14.000
 Title.TextWrapped = true
 Title.TextXAlignment = Enum.TextXAlignment.Left
-table.insert(shade1,Title)
-table.insert(text1,Title)
 
 Publisher.Name = "Publisher"
 Publisher.Parent = ChangelogHolder
@@ -203,8 +193,6 @@ TopTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 TopTitle.TextScaled = true
 TopTitle.TextSize = 14.000
 TopTitle.TextWrapped = true
-table.insert(shade1,TopTitle)
-table.insert(text1,TopTitle)
 
 Close.Name = "Close"
 Close.Parent = ChangelogHolder
@@ -218,8 +206,6 @@ Close.TextColor3 = Color3.fromRGB(255, 255, 255)
 Close.TextScaled = true
 Close.TextSize = 14.000
 Close.TextWrapped = true
-table.insert(shade2,Close)
-table.insert(text1,Close)
 
 wait()
 
