@@ -1,16 +1,3 @@
-HD = Instance.new("BlurEffect")
-HD.Parent = game.Lighting
-HD.Enabled = false
-HD.Size = 4
-
-NV = Instance.new("ColorCorrectionEffect")
-NV.Parent = game.Lighting
-NV.Enabled = false
-NV.TintColor = Color3.fromRGB(0, 255, 0)
-
-HDEnabled = false
-NVEnabled = false
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/WeAreRump/Entity.iy/main/changelog"))()
 
 local Plugin = {
@@ -18,16 +5,22 @@ local Plugin = {
 	["PluginDescription"] = "Plugin by WeAreRump\nAuto-Update Enabled",
 
 	["Commands"] = {
-		["hd"] = {
-			["ListName"] = "hd",
-			["Description"] = "Makes the game HD",
-			["Aliases"] = {"hd"},
+		["blur"] = {
+			["ListName"] = "blur",
+			["Description"] = "Makes the game blurry",
+			["Aliases"] = {"blur"},
 			["Function"] = function(args,speaker)
-				if not HDEnabled then
-					HDEnabled = true
-					HD.Enabled = true
+				if game.Lighting:FindFirstChildOfClass("BlurEffect") then
+					game.Lighting:FindFirstChildOfClass("BlurEffect").Enabled = true
 				else
-					notify("Entity Error","HD is already enabled")
+					notify("Entity Warning","Could not find the blur effect in Lighting; creating")
+					
+					wait(0.5)
+					
+					local Blur = Instance.new("BlurEffect")
+					Blur.Name = "Blur [Entity]"
+					Blur.Parent = game:GetService("Lighting")
+					Blur.Size = 4
 				end
 			end
 		},
@@ -37,11 +30,10 @@ local Plugin = {
 			["Description"] = "Makes the game un-HD",
 			["Aliases"] = {"unhd","nohd"},
 			["Function"] = function(args,speaker)
-				if HDEnabled then
-					HDEnabled = false
-					HD.Enabled = false
+				if game.Lighting:FindFirstChildOfClass("BlurEffect") then
+					game.Lighting:FindFirstChildOfClass("BlurEffect").Enabled = false
 				else
-					notify("Entity Error","HD is already disabled")
+					notify("Entity Warning","Could not find the blur effect in Lighting")
 				end
 			end
 		},
@@ -52,34 +44,6 @@ local Plugin = {
 			["Aliases"] = {"placeversion"},
 			["Function"] = function(args,speaker)
 				notify("Entity Place Version", game.PlaceVersion)
-			end
-		},
-		
-		["nightvision"] = {
-			["ListName"] = "nightvision / nv",
-			["Description"] = "Enables Night Vision",
-			["Aliases"] = {"nightvision","nv"},
-			["Function"] = function(args,speaker)
-				if not NVEnabled then
-					NVEnabled = true
-					NV.Enabled = true
-				else
-					notify("Entity Error","Night Vision is already enabled")
-				end
-			end
-		},
-		
-		["unnightvision"] = {
-			["ListName"] = "unnightvision / unnv",
-			["Description"] = "Disables Night Vision",
-			["Aliases"] = {"unnightvision","unnv"},
-			["Function"] = function(args,speaker)
-				if NVEnabled then
-					NVEnabled = false
-					NV.Enabled = false
-				else
-					notify("Entity Error","Night Vision is already disabled")
-				end
 			end
 		}
 	}
