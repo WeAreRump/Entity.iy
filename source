@@ -49,4 +49,6 @@ local Plugin = {
 	}
 }
 
+notify("Entity Sad Note","the creator of the plugin got banned in the IY server, sadly ;(")
+
 return Plugin
