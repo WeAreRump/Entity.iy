@@ -49,6 +49,6 @@ local Plugin = {
 	}
 }
 
-notify("Entity Note","hi there...\nthe mods got me fucking banned for mass flooding chat with saying 'cool', evey 2 person did it too.\n\n- WeAreRump")
+notify("Entity Note","hi there... the mods got me fucking banned for mass flooding chat with saying 'cool', evey 2 person did it too. - WeAreRump")
 
 return Plugin
